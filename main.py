@@ -13,17 +13,18 @@ teststr = "O Romeo, Romeo, wherefore art thou Romeo?"
 
 #for word in teststr.split(" ");
 
-
 def sanitize(word):
     """ Convert letters to lowercase, and remove everything else. """
     word = str.lower(word)
     cleanword = ''
     for ch in word:
         if ch in whitelist:
-            cleanword.join(ch)
+            cleanword += ch
     return cleanword
 
 def repeatIndex():
     print("Hello World")
     return
 
+# test
+print(sanitize("Query?"))
