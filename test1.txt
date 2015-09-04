@@ -1,0 +1,4 @@
+Some documents have words
+on multiple lines
+
+or even in other paragraphs.
