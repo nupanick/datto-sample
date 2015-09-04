@@ -1,7 +1,9 @@
 # datto-sample
 A sample coding assignment for an interview with Datto (September 2015). This program finds the word in an input file with the highest frequency of any repeated letter.
 
-Usage: python3 main.py <input file>
+Usage: 
+
+    python3 main.py <input file>
 
 Here is the original problem statement, followed my my solution notes.
 
