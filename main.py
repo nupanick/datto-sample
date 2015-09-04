@@ -6,19 +6,15 @@
 
 import string   # For building the whitelist.
 
-teststr = "O Romeo, Romeo, wherefore art thou Romeo?"
-
-# TODO: Change this loop to loop over words in a file instead of in a test
-# string.
-
-#for word in teststr.split(" ");
+def main():
+    pass
 
 def repeatIndex(word):
     """ Return the number of times the most common letter in the word appears
         in the word. """
     word = word.lower()                 # Ignore capitalization.
     whitelist = string.ascii_lowercase  # Ignore punctuation.
-    skip = []                           # Track already counted letters.
+    skip = []                           # Skip already counted letters.
     bestScore = 0
     for ch in word:
         if ch not in skip and ch in whitelist:
@@ -28,6 +24,13 @@ def repeatIndex(word):
                 bestScore = score
     return bestScore
 
+"""
 # test
+teststr = "O Romeo, Romeo, wherefore art thou Romeo?"
 for word in teststr.split(" "):
     print(repeatIndex(word))
+"""
+
+# (main trigger)
+if __name__ = "__main__":
+    main()
