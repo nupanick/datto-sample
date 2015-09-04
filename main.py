@@ -4,8 +4,8 @@
 # Find the first word in a document with the maximum number of repetitions of
 # any given letter.
 
-import sys  # For the command line argument.
-from string import ascii_lowercase as whitelist # For ignoring punctuation.
+import sys      # For the command line argument.
+import string   # For building the whitelist.
 
 def main():
     """ Read in a text file and print out the word with the highest
@@ -29,6 +29,7 @@ def main():
             for word in line.split(" "):
                 # Word-by-word logic goes here.
                 
+                word = sanitize(word)
                 score = repeatIndex(word)
                 if score > bestScore:       # Reminder: first word wins ties.
                     bestWord = word
@@ -38,26 +39,28 @@ def main():
         # Done reading line.
     # Close file.
 
-    # Clean up the winning word.
-    bestWord = bestWord.lower()
+    # Announce the winning word.
+    print(bestWord)
+    return
+
+def sanitize(word):
+    """ Remove punctuation and capitalization from a word. """
+    whitelist = string.ascii_lowercase  # Letters only.
+    word = word.lower() 
     cleanWord = ''
-    for ch in bestWord:
+    for ch in word:
         if ch in whitelist:
             cleanWord += ch
+    return cleanWord
 
-    # And output it!
-    print(cleanWord)
-    return
 
 def repeatIndex(word):
     """ Return the number of times the most common letter in the word appears
         in the word. """
-    word = word.lower()     # Ignore capitalization.
-    #whitelist              # Ignore punctuation.
     skip = []               # Skip already counted letters.
     bestScore = 0
     for ch in word:
-        if ch not in skip and ch in whitelist:
+        if ch not in skip:
             skip += ch
             score = word.count(ch)
             if score > bestScore:
