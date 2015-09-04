@@ -16,7 +16,7 @@ def main():
     
     # Get filename from args
     if not len(sys.argv) == 2:
-        print("Usage: " + sys[0] + "<input file>")
+        print("Usage: " + sys.argv[0] + " <input file>")
         return
     filename = sys.argv[1]
 
