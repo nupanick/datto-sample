@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
-# main.py
-# Find the first word in a document with the maximum number of repetitions of
-# any given letter.
+# main.py for datto-sample
+# by Nicholas "nupanick" Lamicela
+# September 2015
+
+# Problem brief: Find the first word in a document with the maximum number of 
+# repetitions of any individual letter.
 
 import sys      # For the command line argument.
 import string   # For building the whitelist.
@@ -66,13 +69,6 @@ def repeatIndex(word):
             if score > bestScore:
                 bestScore = score
     return bestScore
-
-"""
-# test
-teststr = "O Romeo, Romeo, wherefore art thou Romeo?"
-for word in teststr.split(" "):
-    print(repeatIndex(word))
-"""
 
 # (main trigger)
 if __name__ == "__main__":
