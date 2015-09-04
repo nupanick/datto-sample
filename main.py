@@ -22,9 +22,20 @@ def sanitize(word):
             cleanword += ch
     return cleanword
 
-def repeatIndex():
-    print("Hello World")
-    return
+def repeatIndex(word):
+    """ Return the number of times the most common letter in the word appears
+        in the word. """
+    word = sanitize(word)   # Ignore capitalization and punctuation
+    skip = []               # Track already counted letters
+    bestScore = 0
+    for ch in word:
+        if ch not in skip:
+            skip += ch
+            score = word.count(ch)
+            if score > bestScore:
+                bestScore = score
+    return bestScore
 
 # test
-print(sanitize("Query?"))
+for word in teststr.split(" "):
+    print(repeatIndex(word))
