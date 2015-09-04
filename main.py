@@ -4,7 +4,7 @@
 # Find the first word in a document with the maximum number of repetitions of
 # any given letter.
 
-import string.ascii_lowercase as whitelist      # For avoiding punctuation
+from string import ascii_lowercase as whitelist     # For avoiding punctuation
 
 teststr = "O Romeo, Romeo, wherefore art thou Romeo?"
 
